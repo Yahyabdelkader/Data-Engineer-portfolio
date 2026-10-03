@@ -123,16 +123,3 @@ You can preview the portfolio using any of the following methods:
 2. Run `vercel` in the project root directory and follow the short prompts.
 
 ---
-
-## 🛠️ Personal Details & Contacts Configured
-
-- **Name**: Yahya Mohamed
-- **Role**: Data Engineer Intern / IoT Systems Student
-- **Email**: [yehiabdelkader@gmail.com](mailto:yehiabdelkader@gmail.com)
-- **Phone**: +20 01022023941
-- **LinkedIn**: [Yahya Abdelkader](https://www.linkedin.com/in/yahya-abdelkader-b049a2380)
-- **GitHub**: [Yahyabdelkader](https://github.com/Yahyabdelkader)
-- **Education / Timeline**:
-  - `2026 - Present`: Data Engineer Track | DEPI (Digital Egypt Pioneers Initiative)
-  - `Summer 2025`: Mobile Application Development with Flutter | NTI
-  - `2022 - 2026`: IoT Systems Student | Menofia University
