@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+  <rect width="400" height="240" rx="12" fill="#1e1e1e"/>
+  <rect x="0" y="0" width="400" height="34" rx="12" fill="#2d2d2d"/>
+  <!-- Window buttons -->
+  <circle cx="20" cy="17" r="4.5" fill="#555"/>
+  <circle cx="34" cy="17" r="4.5" fill="#555"/>
+  <circle cx="48" cy="17" r="4.5" fill="#555"/>
+  <text x="200" y="21" font-family="'JetBrains Mono', monospace" font-size="11" fill="#888" text-anchor="middle">clean_data.py</text>
+  
+  <!-- Python code lines -->
+  <g font-family="'JetBrains Mono', monospace" font-size="11" fill="#d4d4d4">
+    <text x="24" y="65"><tspan fill="#e3caa6">import</tspan> pandas <tspan fill="#e3caa6">as</tspan> pd</text>
+    <text x="24" y="90">df = pd.read_csv(<tspan fill="#ce9178">'raw_events.csv'</tspan>)</text>
+    <text x="24" y="115"><tspan fill="#6a9955"># Clean missing values &amp; normalize</tspan></text>
+    <text x="24" y="140">df[<tspan fill="#ce9178">'revenue'</tspan>] = df[<tspan fill="#ce9178">'revenue'</tspan>].fillna(<tspan fill="#b5cea8">0</tspan>)</text>
+    <text x="24" y="165">df[<tspan fill="#ce9178">'date'</tspan>] = pd.to_datetime(df[<tspan fill="#ce9178">'date'</tspan>])</text>
+    <text x="24" y="190"><tspan fill="#e3caa6">print</tspan>(<tspan fill="#ce9178">f"Pipeline success: {len(df)} records"</tspan>)</text>
+  </g>
+  <rect x="24" y="208" width="140" height="18" rx="4" fill="#9e8867" opacity="0.3"/>
+  <text x="32" y="221" font-family="'Inter', sans-serif" font-size="9" font-weight="600" fill="#e3caa6">PANDAS · NUMPY · AUTOMATION</text>
+</svg>

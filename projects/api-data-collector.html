@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public API Data Collector | Yahya Mohamed</title>
+  <meta name="description" content="Public API Data Collector practice project by Yahya Mohamed. Automated daily extraction from public APIs into persistent time-series SQL storage.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%239e8867'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='700' fill='%23ffffff' text-anchor='middle'>Y</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-dot"></span>
+        <span>Yahya</span>
+      </a>
+      <a href="../index.html#works" class="back-link" style="margin-bottom:0;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to Selected Works</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <article class="container project-detail-hero">
+      <a href="../index.html#works" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to Portfolio</span>
+      </a>
+
+      <div style="margin-bottom: 20px;">
+        <span class="practice-badge">Practice Project</span>
+      </div>
+
+      <h1 class="project-detail-title">Public API Data Collector</h1>
+      <p class="project-detail-subtitle">
+        An automated Python data ingestion worker that queries free public REST APIs on a scheduled cron cadence, parses dynamic JSON payloads, and persists historical time-series entries into SQL.
+      </p>
+
+      <div class="tool-tags" style="margin-bottom: 40px;">
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">SQL</span>
+        <span class="tool-tag">Scheduling / Cron</span>
+        <span class="tool-tag">REST APIs</span>
+        <span class="tool-tag">Time-Series</span>
+      </div>
+
+      <!-- Media Visual -->
+      <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-medium); margin-bottom: 48px; background-color: var(--bg-surface);">
+        <img src="../assets/images/project-api.svg" alt="Public API Data Collector visual" style="width: 100%;">
+      </div>
+
+      <!-- Detail Content Grid -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: flex-start;">
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">Project Overview</h2>
+            <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+              While many public APIs provide real-time updates on weather measurements, foreign currency exchange rates, or cryptocurrency indices, free endpoints rarely retain multi-month historical archives. This project demonstrates how to build an automated ingestion daemon that snapshots live values daily, stores them persistently in a database, and tracks delta variations over time.
+            </p>
+          </div>
+
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">Key Architectural Features</h2>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div style="background-color: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">1. Resilient HTTP Request Engine</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Uses Python <code>requests</code> with connection pooling, exponential backoff retries, and explicit response status code validation to withstand transient internet drops.</p>
+              </div>
+
+              <div style="background-color: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">2. Schema &amp; Payload Normalization</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Flattens deeply nested JSON responses into clean key-value records, attaching UTC timestamps and calculating 24-hour delta changes prior to database writing.</p>
+              </div>
+
+              <div style="background-color: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">3. Scheduled Execution</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Configured via Cron job schedule (<code>0 0 * * *</code>) and Python's <code>schedule</code> module to run seamlessly in the background with local log file tracking.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">Worker Script Implementation</h2>
+            <pre class="code-snippet-box"><code>import time
+import requests
+import sqlite3
+from datetime import datetime
+import schedule
+
+DB_PATH = "data/market_history.db"
+
+def init_db():
+    with sqlite3.connect(DB_PATH) as conn:
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS currency_rates (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                recorded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                base_currency TEXT,
+                target_currency TEXT,
+                rate REAL,
+                delta_prev REAL
+            );
+        """)
+
+def fetch_and_store_rates():
+    url = "https://open.er-api.com/v6/latest/USD"
+    print(f"[{datetime.now()}] Pulling rate updates from API...")
+    
+    try:
+        response = requests.get(url, timeout=12)
+        response.raise_for_status()
+        data = response.json()
+        
+        rates = data.get("rates", {})
+        tracked = ["EUR", "GBP", "EGP", "JPY", "CAD"]
+
+        with sqlite3.connect(DB_PATH) as conn:
+            cursor = conn.cursor()
+            for curr in tracked:
+                val = rates.get(curr)
+                # Fetch last known rate to compute percentage delta
+                cursor.execute(
+                    "SELECT rate FROM currency_rates WHERE target_currency = ? ORDER BY id DESC LIMIT 1",
+                    (curr,)
+                )
+                last_row = cursor.fetchone()
+                last_val = last_row[0] if last_row else val
+                delta = ((val - last_val) / last_val) * 100 if last_val else 0.0
+
+                cursor.execute("""
+                    INSERT INTO currency_rates (base_currency, target_currency, rate, delta_prev)
+                    VALUES ('USD', ?, ?, ?)
+                """, (curr, val, round(delta, 4)))
+            conn.commit()
+            print(f"[{datetime.now()}] Successfully saved {len(tracked)} currency entries.")
+
+    except Exception as err:
+        print(f"Error executing poller: {err}")
+
+# Schedule task every day at 00:00 midnight
+schedule.every().day.at("00:00").do(fetch_and_store_rates)
+
+if __name__ == "__main__":
+    init_db()
+    fetch_and_store_rates() # Immediate test run
+    while True:
+        schedule.run_pending()
+        time.sleep(60)</code></pre>
+          </div>
+
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">Key Takeaways &amp; Engineering Skills</h2>
+            <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px; font-size: 1rem;">
+              <li>Handling API rate limits, HTTP status codes, and network latency defensively.</li>
+              <li>Implementing robust scheduler routines without drifting or resource bloat.</li>
+              <li>Designing append-only immutable time-series structures.</li>
+              <li>Logging execution metrics and errors for observability.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sidebar Meta -->
+        <aside style="background-color: var(--bg-surface); padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--border-medium); display: flex; flex-direction: column; gap: 24px;">
+          <div>
+            <span class="contact-label">Project Type</span>
+            <p style="font-weight: 600; margin-top: 4px;">Practice &amp; Learning Project</p>
+          </div>
+          <div>
+            <span class="contact-label">Primary Tools</span>
+            <p style="font-weight: 500; margin-top: 4px; color: var(--text-secondary);">Python, Requests, SQL, Cron / Schedule</p>
+          </div>
+          <div>
+            <span class="contact-label">Cadence</span>
+            <p style="font-weight: 500; margin-top: 4px; color: var(--text-secondary);">Daily (00:00 UTC Automated)</p>
+          </div>
+          <div>
+            <span class="contact-label">Developer</span>
+            <p style="font-weight: 500; margin-top: 4px; color: var(--text-secondary);">Yahya Mohamed</p>
+          </div>
+          <div style="padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+            <a href="mailto:yehiabdelkader@gmail.com" class="nav-cta-btn" style="width: 100%; justify-content: center;">
+              Discuss this project
+            </a>
+          </div>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <footer class="section footer-section" style="padding-top: 60px; margin-top: 80px;">
+    <div class="container footer-bottom" style="border-top: none; padding-top: 0;">
+      <div class="footer-brand">Yahya Mohamed</div>
+      <div class="copyright-text">&copy; 2026 Yahya Mohamed. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

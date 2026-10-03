@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="apiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f2eb"/>
+      <stop offset="100%" stop-color="#ece6dc"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9e8867"/>
+      <stop offset="100%" stop-color="#c4b093"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="500" fill="url(#apiBg)"/>
+
+  <!-- Subtle Network Nodes Grid in background -->
+  <g stroke="#e2ded4" stroke-width="1" opacity="0.6">
+    <circle cx="160" cy="120" r="3" fill="#ded8cc"/>
+    <circle cx="340" cy="80" r="3" fill="#ded8cc"/>
+    <circle cx="580" cy="110" r="3" fill="#ded8cc"/>
+    <circle cx="680" cy="240" r="3" fill="#ded8cc"/>
+    <line x1="160" y1="120" x2="340" y2="80"/>
+    <line x1="340" y1="80" x2="580" y2="110"/>
+    <line x1="580" y1="110" x2="680" y2="240"/>
+  </g>
+
+  <!-- Main Card -->
+  <g transform="translate(60, 60)">
+    <rect width="680" height="360" rx="14" fill="#ffffff" stroke="#ded8cc" stroke-width="1.5" filter="drop-shadow(0 14px 28px rgba(0,0,0,0.05))"/>
+
+    <!-- Left Subcard: API Ingestion Request -->
+    <g transform="translate(25, 30)">
+      <rect width="290" height="300" rx="10" fill="#faf8f5" stroke="#eee9e0" stroke-width="1"/>
+      <rect x="16" y="16" width="34" height="34" rx="8" fill="#f2efe9"/>
+      <!-- Cloud Download Icon -->
+      <path d="M 27 34 L 33 40 L 39 34 M 33 26 L 33 40" stroke="#9e8867" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <text x="60" y="30" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#212121">REST API Ingestion</text>
+      <text x="60" y="44" font-family="'Inter', sans-serif" font-size="10" fill="#8c8983">Automated Daily Poller</text>
+
+      <!-- Code Box -->
+      <rect x="16" y="68" width="258" height="150" rx="8" fill="#ffffff" stroke="#e8e4dc" stroke-width="1"/>
+      <text x="28" y="90" font-family="'JetBrains Mono', monospace" font-size="9" fill="#9e8867" font-weight="600">GET /api/v1/rates/latest</text>
+      <text x="28" y="108" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#333">Host: api.exchangerate.host</text>
+      <text x="28" y="126" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#8c8983">Schedule: 0 0 * * * (Daily)</text>
+      
+      <line x1="28" y1="138" x2="262" y2="138" stroke="#f0ece4" stroke-width="1"/>
+      <text x="28" y="156" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#2d7a46">200 OK · Payload 4.2 KB</text>
+      <text x="28" y="174" font-family="'JetBrains Mono', monospace" font-size="8" fill="#666">{"base": "USD", "date": "2026-10-01",</text>
+      <text x="28" y="190" font-family="'JetBrains Mono', monospace" font-size="8" fill="#666"> "rates": {"EUR": 0.92, "EGP": 48.6}}</text>
+      <text x="28" y="206" font-family="'JetBrains Mono', monospace" font-size="8" fill="#666">}</text>
+
+      <!-- Status indicator -->
+      <rect x="16" y="234" width="258" height="34" rx="6" fill="#f0f7f2"/>
+      <circle cx="34" cy="251" r="4" fill="#2d7a46"/>
+      <text x="46" y="255" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#2d7a46">CRON TRIGGER: ACTIVE</text>
+    </g>
+
+    <!-- Connecting Arrow in middle -->
+    <g transform="translate(325, 170)">
+      <circle cx="15" cy="15" r="14" fill="#f7f5f2" stroke="#ded8cc" stroke-width="1"/>
+      <path d="M 10 15 L 20 15 M 16 11 L 20 15 L 16 19" stroke="#9e8867" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <!-- Right Subcard: Time-Series Store & Trend -->
+    <g transform="translate(365, 30)">
+      <rect width="290" height="300" rx="10" fill="#faf8f5" stroke="#eee9e0" stroke-width="1"/>
+      <rect x="16" y="16" width="34" height="34" rx="8" fill="#f2efe9"/>
+      <!-- Database icon -->
+      <path d="M 25 28 C 25 25 41 25 41 28 C 41 31 25 31 25 28 Z M 25 28 L 25 38 C 25 41 41 41 41 38 L 41 28" stroke="#9e8867" stroke-width="1.8" fill="none"/>
+      <text x="60" y="30" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#212121">Time-Series History DB</text>
+      <text x="60" y="44" font-family="'Inter', sans-serif" font-size="10" fill="#8c8983">Tracking Changes Over Time</text>
+
+      <!-- Mini Trend Chart -->
+      <rect x="16" y="68" width="258" height="150" rx="8" fill="#ffffff" stroke="#e8e4dc" stroke-width="1"/>
+      <text x="28" y="90" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#212121">Currency Rate History (30 Days)</text>
+      
+      <!-- Trend Line chart -->
+      <path d="M 30 180 L 60 170 L 95 175 L 130 150 L 165 155 L 200 130 L 235 120 L 260 110" fill="none" stroke="#9e8867" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="260" cy="110" r="4" fill="#9e8867"/>
+
+      <!-- Table snapshot -->
+      <rect x="16" y="234" width="258" height="52" rx="6" fill="#fbf9f6" stroke="#eee9e0" stroke-width="1"/>
+      <text x="26" y="250" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#8c8983">record_id | timestamp | delta</text>
+      <text x="26" y="266" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#212121">#0894    | 00:00:01  | +0.42% logged</text>
+    </g>
+  </g>
+
+  <!-- Bottom Tag Banner -->
+  <g transform="translate(250, 445)">
+    <rect width="300" height="32" rx="16" fill="#ffffff" stroke="#ded8cc" stroke-width="1"/>
+    <text x="150" y="20" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#6d6d6d" text-anchor="middle">
+      PRACTICE PROJECT · PYTHON · SQL · SCHEDULING
+    </text>
+  </g>
+</svg>

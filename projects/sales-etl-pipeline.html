@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Data ETL Pipeline | Yahya Mohamed</title>
+  <meta name="description" content="Sales Data ETL Pipeline practice project by Yahya Mohamed. Extracts messy CSV data, validates and cleans with Pandas, loads to SQL database.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%239e8867'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='700' fill='%23ffffff' text-anchor='middle'>Y</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-dot"></span>
+        <span>Yahya</span>
+      </a>
+      <a href="../index.html#works" class="back-link" style="margin-bottom:0;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to Selected Works</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <article class="container project-detail-hero">
+      <a href="../index.html#works" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to Portfolio</span>
+      </a>
+
+      <div style="margin-bottom: 20px;">
+        <span class="practice-badge">Practice Project</span>
+      </div>
+
+      <h1 class="project-detail-title">Sales Data ETL Pipeline</h1>
+      <p class="project-detail-subtitle">
+        A Python and SQL automated data pipeline that extracts a messy CSV sales dataset, cleans and normalizes it with Pandas, and loads it into a relational SQL database.
+      </p>
+
+      <div class="tool-tags" style="margin-bottom: 40px;">
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">Pandas</span>
+        <span class="tool-tag">SQL</span>
+        <span class="tool-tag">PostgreSQL</span>
+        <span class="tool-tag">SQLAlchemy</span>
+      </div>
+
+      <!-- Media Visual -->
+      <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-medium); margin-bottom: 48px; background-color: var(--bg-surface);">
+        <img src="../assets/images/project-etl.svg" alt="Sales Data ETL Pipeline architecture" style="width: 100%;">
+      </div>
+
+      <!-- Detail Content Grid -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: flex-start;">
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">Project Overview</h2>
+            <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+              In commercial data environments, raw source files are frequently compromised with inconsistent formatting, misplaced delimiters, duplicate order entries, and invalid null timestamps. This practice project simulates an end-to-end data ingestion workflow that handles real-world transactional anomalies and transforms messy records into clean, query-ready relational tables.
+            </p>
+          </div>
+
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">Pipeline Workflow</h2>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div style="background-color: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">1. Extraction</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Reads raw CSV files with varied date formats and currency strings. Performs chunk-based reading to optimize memory utilization when handling thousands of rows.</p>
+              </div>
+
+              <div style="background-color: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">2. Cleansing &amp; Transformation</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Strips symbols and currency marks, casts numeric fields to strict decimals, harmonizes datetime entries into standard ISO-8601 formatting, and drops corrupted records lacking mandatory IDs.</p>
+              </div>
+
+              <div style="background-color: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">3. Loading to SQL Warehouse</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Defines a dimensional schema with fact and dimension tables. Utilizes SQLAlchemy and PostgreSQL upserts (<code>ON CONFLICT DO UPDATE</code>) to prevent duplicate key errors during recurrent loads.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">Pipeline Code Implementation</h2>
+            <pre class="code-snippet-box"><code>import pandas as pd
+from sqlalchemy import create_engine
+
+def run_etl_pipeline(csv_path: str, db_connection_url: str):
+    print(">> Extracting raw sales dataset...")
+    df_raw = pd.read_csv(csv_path)
+
+    print(f">> Transforming {len(df_raw)} records...")
+    # Deduplicate transaction identifiers
+    df = df_raw.drop_duplicates(subset=['transaction_id']).copy()
+
+    # Clean currency and float conversion
+    df['sales_amount'] = (
+        df['sales_amount']
+        .astype(str)
+        .str.replace(r'[\$,]', '', regex=True)
+        .astype(float)
+    )
+
+    # Standardize inconsistent dates
+    df['order_date'] = pd.to_datetime(df['order_date'], errors='coerce')
+    
+    # Filter unrecoverable nulls
+    clean_df = df.dropna(subset=['transaction_id', 'order_date', 'customer_id'])
+
+    print(f">> Loading {len(clean_df)} sanitized records to SQL...")
+    engine = create_engine(db_connection_url)
+    clean_df.to_sql('fact_sales_orders', con=engine, if_exists='append', index=False)
+    print(">> ETL Pipeline completed successfully!")
+
+if __name__ == "__main__":
+    run_etl_pipeline("data/messy_sales.csv", "postgresql://user:pass@localhost:5432/warehouse")</code></pre>
+          </div>
+
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">Key Takeaways &amp; Engineering Skills</h2>
+            <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px; font-size: 1rem;">
+              <li>Understanding error boundaries in automated file processing.</li>
+              <li>Implementing vectorized operations in Pandas rather than costly row iteration.</li>
+              <li>Designing normalized relational SQL schemas with foreign key integrity.</li>
+              <li>Enforcing atomic database transactions to ensure rollbacks on unexpected failures.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sidebar Meta -->
+        <aside style="background-color: var(--bg-surface); padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--border-medium); display: flex; flex-direction: column; gap: 24px;">
+          <div>
+            <span class="contact-label">Project Type</span>
+            <p style="font-weight: 600; margin-top: 4px;">Practice &amp; Learning Project</p>
+          </div>
+          <div>
+            <span class="contact-label">Primary Tools</span>
+            <p style="font-weight: 500; margin-top: 4px; color: var(--text-secondary);">Python 3, Pandas, SQL (PostgreSQL), SQLAlchemy</p>
+          </div>
+          <div>
+            <span class="contact-label">Data Format</span>
+            <p style="font-weight: 500; margin-top: 4px; color: var(--text-secondary);">Messy CSV &rarr; Normalized Relational SQL</p>
+          </div>
+          <div>
+            <span class="contact-label">Developer</span>
+            <p style="font-weight: 500; margin-top: 4px; color: var(--text-secondary);">Yahya Mohamed</p>
+          </div>
+          <div style="padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+            <a href="mailto:yehiabdelkader@gmail.com" class="nav-cta-btn" style="width: 100%; justify-content: center;">
+              Discuss this project
+            </a>
+          </div>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <footer class="section footer-section" style="padding-top: 60px; margin-top: 80px;">
+    <div class="container footer-bottom" style="border-top: none; padding-top: 0;">
+      <div class="footer-brand">Yahya Mohamed</div>
+      <div class="copyright-text">&copy; 2026 Yahya Mohamed. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

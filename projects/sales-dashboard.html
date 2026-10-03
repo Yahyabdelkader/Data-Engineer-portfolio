@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Performance Dashboard | Yahya Mohamed</title>
+  <meta name="description" content="Sales Performance Dashboard practice project by Yahya Mohamed. SQL analytical views with Power BI and Tableau visualization.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%239e8867'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='700' fill='%23ffffff' text-anchor='middle'>Y</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-dot"></span>
+        <span>Yahya</span>
+      </a>
+      <a href="../index.html#works" class="back-link" style="margin-bottom:0;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to Selected Works</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <article class="container project-detail-hero">
+      <a href="../index.html#works" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to Portfolio</span>
+      </a>
+
+      <div style="margin-bottom: 20px;">
+        <span class="practice-badge">Practice Project</span>
+      </div>
+
+      <h1 class="project-detail-title">Sales Performance Dashboard</h1>
+      <p class="project-detail-subtitle">
+        An interactive business intelligence dashboard built on top of the relational sales database, visualizing revenue velocity, product rankings, and monthly growth trends.
+      </p>
+
+      <div class="tool-tags" style="margin-bottom: 40px;">
+        <span class="tool-tag">SQL</span>
+        <span class="tool-tag">Power BI</span>
+        <span class="tool-tag">Tableau</span>
+        <span class="tool-tag">Analytical Views</span>
+        <span class="tool-tag">Data Modeling</span>
+      </div>
+
+      <!-- Media Visual -->
+      <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-medium); margin-bottom: 48px; background-color: var(--bg-surface);">
+        <img src="../assets/images/project-dashboard.svg" alt="Sales Performance Dashboard visual" style="width: 100%;">
+      </div>
+
+      <!-- Detail Content Grid -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: flex-start;">
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">Project Overview</h2>
+            <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+              Raw database tables contain rich operational details, but business leaders need instant answers: Which product categories are driving maximum margin? How does this month's revenue compare to historical periods? What is the order velocity per sales region? This project bridges the gap between database engineering and executive decision making.
+            </p>
+          </div>
+
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">Core Metrics &amp; Visual Structure</h2>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div style="background-color: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">Executive KPI Cards</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">High-contrast summary indicators delivering immediate high-level feedback: Gross Revenue ($248,500), Total Processed Orders (3,420), and Average Order Value ($72.66).</p>
+              </div>
+
+              <div style="background-color: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">Monthly Trend &amp; Seasonality Analysis</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Time-series bar and line visual calculating Month-over-Month (MoM) percentage shifts and identifying seasonal transaction spikes across quarters.</p>
+              </div>
+
+              <div style="background-color: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">Product Ranking &amp; Contribution</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Ranked horizontal distribution isolating the top revenue drivers (Enterprise Suite, Cloud Storage Add-on) and identifying underperforming SKU segments.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">SQL Analytical Modeling</h2>
+            <pre class="code-snippet-box"><code>-- Aggregated monthly KPI view for BI direct ingestion
+CREATE OR REPLACE VIEW analytics.monthly_revenue_kpis AS
+WITH monthly_data AS (
+    SELECT 
+        DATE_TRUNC('month', order_date) AS order_month,
+        product_category,
+        COUNT(DISTINCT order_id) AS total_orders,
+        SUM(net_amount) AS monthly_revenue
+    FROM staging.fact_sales
+    WHERE order_status = 'Delivered'
+    GROUP BY 1, 2
+)
+SELECT 
+    order_month,
+    product_category,
+    total_orders,
+    monthly_revenue,
+    -- Calculate previous month revenue via SQL Window Function
+    LAG(monthly_revenue, 1) OVER (
+        PARTITION BY product_category ORDER BY order_month
+    ) AS prior_month_revenue,
+    ROUND(
+        (monthly_revenue - LAG(monthly_revenue, 1) OVER (
+            PARTITION BY product_category ORDER BY order_month
+        )) / NULLIF(LAG(monthly_revenue, 1) OVER (
+            PARTITION BY product_category ORDER BY order_month
+        ), 0) * 100, 2
+    ) AS mom_growth_pct
+FROM monthly_data;</code></pre>
+          </div>
+
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary);">Key Takeaways &amp; Engineering Skills</h2>
+            <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px; font-size: 1rem;">
+              <li>Writing maintainable SQL Common Table Expressions (CTEs) and Window Functions.</li>
+              <li>Connecting BI tools directly to relational database schemas without performance bottlenecks.</li>
+              <li>Applying design hierarchy principles to prevent dashboard clutter.</li>
+              <li>Formulating actionable business indicators rather than simply displaying raw metrics.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sidebar Meta -->
+        <aside style="background-color: var(--bg-surface); padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--border-medium); display: flex; flex-direction: column; gap: 24px;">
+          <div>
+            <span class="contact-label">Project Type</span>
+            <p style="font-weight: 600; margin-top: 4px;">Practice &amp; Learning Project</p>
+          </div>
+          <div>
+            <span class="contact-label">Primary Tools</span>
+            <p style="font-weight: 500; margin-top: 4px; color: var(--text-secondary);">SQL, Power BI, Tableau</p>
+          </div>
+          <div>
+            <span class="contact-label">Data Layer</span>
+            <p style="font-weight: 500; margin-top: 4px; color: var(--text-secondary);">PostgreSQL Analytical Views</p>
+          </div>
+          <div>
+            <span class="contact-label">Developer</span>
+            <p style="font-weight: 500; margin-top: 4px; color: var(--text-secondary);">Yahya Mohamed</p>
+          </div>
+          <div style="padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+            <a href="mailto:yehiabdelkader@gmail.com" class="nav-cta-btn" style="width: 100%; justify-content: center;">
+              Discuss this project
+            </a>
+          </div>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <footer class="section footer-section" style="padding-top: 60px; margin-top: 80px;">
+    <div class="container footer-bottom" style="border-top: none; padding-top: 0;">
+      <div class="footer-brand">Yahya Mohamed</div>
+      <div class="copyright-text">&copy; 2026 Yahya Mohamed. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

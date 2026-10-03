@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="etlBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f1eb"/>
+      <stop offset="100%" stop-color="#ece5dc"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9e8867"/>
+      <stop offset="100%" stop-color="#b8a27d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="500" fill="url(#etlBg)"/>
+
+  <!-- Subtle Grid Lines -->
+  <g stroke="#e2dcd2" stroke-width="1" opacity="0.6">
+    <line x1="80" y1="0" x2="80" y2="500"/>
+    <line x1="240" y1="0" x2="240" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="560" y1="0" x2="560" y2="500"/>
+    <line x1="720" y1="0" x2="720" y2="500"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+  </g>
+
+  <!-- Central Flow Line -->
+  <path d="M 230 250 L 330 250 M 470 250 L 570 250" stroke="#9e8867" stroke-width="2.5" stroke-dasharray="6,4"/>
+
+  <!-- Left: Raw CSV Node -->
+  <g transform="translate(70, 150)">
+    <rect width="160" height="200" rx="12" fill="#ffffff" stroke="#ded8cc" stroke-width="1.5" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.04))"/>
+    <rect x="16" y="16" width="36" height="36" rx="8" fill="#f4efe6"/>
+    <!-- File icon -->
+    <path d="M 28 26 L 36 26 L 40 30 L 40 42 L 28 42 Z" fill="none" stroke="#9e8867" stroke-width="1.5"/>
+    <text x="60" y="32" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#212121">raw_sales.csv</text>
+    <text x="60" y="46" font-family="'Inter', sans-serif" font-size="10" fill="#8c8983">Messy Input Data</text>
+    
+    <!-- CSV Mock Rows -->
+    <rect x="16" y="70" width="128" height="18" rx="4" fill="#faf8f5"/>
+    <text x="24" y="83" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6d6d6d">id, date, amt, state</text>
+    <rect x="16" y="96" width="128" height="18" rx="4" fill="#fdfbfa"/>
+    <text x="24" y="109" font-family="'JetBrains Mono', monospace" font-size="9" fill="#999">101, NULL, $420, CA</text>
+    <rect x="16" y="122" width="128" height="18" rx="4" fill="#faf8f5"/>
+    <text x="24" y="135" font-family="'JetBrains Mono', monospace" font-size="9" fill="#999">102, 2026/02, 180, NY</text>
+    <rect x="16" y="148" width="128" height="18" rx="4" fill="#fdfbfa"/>
+    <text x="24" y="161" font-family="'JetBrains Mono', monospace" font-size="9" fill="#999">103, 2026-03, 310, ?</text>
+  </g>
+
+  <!-- Middle: Cleaning & Transform Node -->
+  <g transform="translate(310, 130)">
+    <rect width="180" height="240" rx="14" fill="#ffffff" stroke="#9e8867" stroke-width="1.5" filter="drop-shadow(0 12px 24px rgba(158,136,103,0.12))"/>
+    <rect x="16" y="16" width="40" height="40" rx="8" fill="#9e8867"/>
+    <!-- Gear / Transform Icon -->
+    <circle cx="36" cy="36" r="8" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <path d="M 36 24 L 36 28 M 36 44 L 36 48 M 24 36 L 28 36 M 44 36 L 48 36" stroke="#ffffff" stroke-width="2"/>
+    <text x="66" y="32" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#212121">Pandas &amp; Python</text>
+    <text x="66" y="47" font-family="'Inter', sans-serif" font-size="10" fill="#9e8867" font-weight="500">Transform &amp; Clean</text>
+
+    <!-- Code pill blocks -->
+    <rect x="16" y="74" width="148" height="24" rx="6" fill="#f7f5f2"/>
+    <text x="26" y="90" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#333">df.dropna(subset=['id'])</text>
+
+    <rect x="16" y="106" width="148" height="24" rx="6" fill="#f7f5f2"/>
+    <text x="26" y="122" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#333">df['amt'] = clean_num()</text>
+
+    <rect x="16" y="138" width="148" height="24" rx="6" fill="#f7f5f2"/>
+    <text x="26" y="154" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#333">to_datetime(format)</text>
+
+    <!-- Status badge -->
+    <rect x="16" y="180" width="148" height="34" rx="8" fill="#f2efe9"/>
+    <circle cx="32" cy="197" r="4" fill="#9e8867"/>
+    <text x="44" y="201" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#212121">STATUS: VALIDATED</text>
+  </g>
+
+  <!-- Right: SQL Database Node -->
+  <g transform="translate(570, 150)">
+    <rect width="160" height="200" rx="12" fill="#ffffff" stroke="#ded8cc" stroke-width="1.5" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.04))"/>
+    <rect x="16" y="16" width="36" height="36" rx="8" fill="#f4efe6"/>
+    <!-- DB cylinder icon -->
+    <ellipse cx="34" cy="28" rx="8" ry="4" fill="none" stroke="#9e8867" stroke-width="1.5"/>
+    <path d="M 26 28 L 26 40 C 26 43 42 43 42 40 L 42 28" fill="none" stroke="#9e8867" stroke-width="1.5"/>
+    <text x="60" y="32" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#212121">SQL Database</text>
+    <text x="60" y="46" font-family="'Inter', sans-serif" font-size="10" fill="#8c8983">Normalized Schema</text>
+
+    <!-- Clean table mock -->
+    <rect x="16" y="70" width="128" height="20" rx="4" fill="#9e8867"/>
+    <text x="24" y="84" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ffffff" font-weight="600">orders_fact_table</text>
+
+    <rect x="16" y="96" width="128" height="18" rx="4" fill="#faf8f5"/>
+    <text x="24" y="109" font-family="'JetBrains Mono', monospace" font-size="9" fill="#333">101 | 2026-01 | 420.00</text>
+    <rect x="16" y="120" width="128" height="18" rx="4" fill="#fdfbfa"/>
+    <text x="24" y="133" font-family="'JetBrains Mono', monospace" font-size="9" fill="#333">102 | 2026-02 | 180.00</text>
+    <rect x="16" y="144" width="128" height="18" rx="4" fill="#faf8f5"/>
+    <text x="24" y="157" font-family="'JetBrains Mono', monospace" font-size="9" fill="#333">103 | 2026-03 | 310.00</text>
+  </g>
+
+  <!-- Bottom Tag Banner -->
+  <g transform="translate(260, 430)">
+    <rect width="280" height="34" rx="17" fill="#ffffff" stroke="#ded8cc" stroke-width="1"/>
+    <text x="140" y="21" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#6d6d6d" text-anchor="middle">
+      PRACTICE PROJECT · PYTHON · PANDAS · SQL
+    </text>
+  </g>
+</svg>
